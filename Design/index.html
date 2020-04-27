@@ -10,39 +10,207 @@
 </head>
 <body>
   <!-- Inicio del SideBar -->
-<div id="content-wrapper" class="d-flex">
-   <div id="sidebar-container" class="bg-light border-light">
-     <div class="logo">Coronavirus</div>
-     <div class="menu list-group-flush">
-       <a href="" class="list-group-item list-group-item-action bg-light p-3 border-0"><i class="fas fa-home mr-2"></i>Tablero</a>
-       <a href="" class="list-group-item list-group-item-action bg-light p-3 border-0"><i class="fas fa-users mr-2"></i>Usuarios</a>
-       <a href="" class="list-group-item list-group-item-action bg-light p-3 border-0"><i class="fas fa-book mr-2"></i>Registros Covid</a>
-     </div>
-   </div>
+  <div class="d-flex" id="content-wrapper">
 
-<div id="page-container" class="w-100">
-  <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
-    <!-- Boton del SideBar -->
-    <button id="menu-toggle" class="navbar-brand btn" href="#"><i class="fas fa-bars"></i></button>
+      <!-- Sidebar -->
+      <div id="sidebar-container" class="bg-light border-dark border-right">
+        <div class="logo">
+          <h4 class="logo"><i class="btn-lg text-primary fas fa-virus"></i> Coronavirus</h4>
+        </div>
+        <div class="menu list-group-flush">
+       <a href="#" class="list-group-item list-group-item-action bg-light p-3 border-bottom border-dark"><i class="fas fa-home mr-2"></i>Tablero</a>
+       <a href="pag/usuarios.html" class="list-group-item list-group-item-action bg-light p-3 border-bottom border-dark"><i class="fas fa-users mr-2"></i>Usuarios</a>
+       <a href="" class="list-group-item list-group-item-action bg-light p-3 border-bottom border-dark"><i class="fas fa-book mr-2"></i>Registros Covid</a>
+       <a href="" class="list-group-item list-group-item-action bg-light p-3 border-bottom border-dark"><i class="fas fa-globe-americas mr-2"></i>Monitoreo</a>
+        </div>
+      </div>
+      <!-- Fin sidebar -->
 
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav ml-auto">
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Usuario
-          </a>
-          <div class="dropdown-menu  mr-auto" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="#">Logout</a>
+      <!-- Page Content -->
+      <div id="page-content-wrapper" class="w-100 bg-light-blue">
+
+        <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom border-dark">
+          <div class="container">
+            <button class="btn btn-outline-dark" id="menu-toggle"><i class="fas fa-bars"></i></button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+                <li class="nav-item dropdown">
+                  <a class="nav-link text-dark dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Admin
+                  </a>
+                  <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="pag/login.html">Logout</a>
+                  </div>
+                </li>
+              </ul>
+            </div>
           </div>
-        </li>
-      </ul>
+        </nav>
+
+        <div id="content" class="container-fluid p-5">
+          <section class="py-3">
+            <!-- Highlights -->
+            <div class="row">
+              <div class="col-xl-3 col-lg-6">
+                <div class="card mb-5 shadow-sm border-0 shadow-hover">
+                  <div class="card-body d-flex">
+                    <div>
+                      <div class="circle rounded-circle align-self-center d-flex mr-3">
+                        <i class="fab fa-wolf-pack-battalion" style="font-size:50px;"></i>
+                      </div>
+                    </div>
+                    <div class="align-self-center">
+                      <h5 class="mb-0">3200</h5>
+                      <small class="text-muted">Total Registrados</small>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-xl-3 col-lg-6">
+                <div class="card mb-5 shadow-sm border-0 shadow-hover">
+                  <div class="card-body d-flex">
+                    <div>
+                      <div class="circle rounded-circle align-self-center d-flex mr-3">
+                        <i class="fab fa-wolf-pack-battalion" style="font-size:50px;"></i>
+                      </div>
+                    </div>
+                    <div class="align-self-center">
+                      <h5 class="mb-0">13,200</h5>
+                      <small class="text-muted">Infectados</small>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-xl-3 col-lg-6">
+                <div class="card mb-5 shadow-sm border-0 shadow-hover">
+                  <div class="card-body d-flex">
+                    <div>
+                      <div class="circle rounded-circle align-self-center d-flex mr-3">
+                        <i class="fab fa-wolf-pack-battalion" style="font-size:50px;"></i>
+                      </div>
+                    </div>
+                    <div class="align-self-center">
+                      <h5 class="mb-0">7345</h5>
+                      <small class="text-muted">Recuperados</small>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-xl-3 col-lg-6">
+                <div class="card mb-5 shadow-sm border-0 shadow-hover">
+                  <div class="card-body d-flex">
+                    <div>
+                      <div class="circle rounded-circle align-self-center d-flex mr-3">
+                        <i class="fab fa-wolf-pack-battalion" style="font-size:50px;"></i>
+                      </div>
+                    </div>
+                    <div class="align-self-center">
+                      <h5 class="mb-0">100</h5>
+                      <small class="text-muted">Fallecidos</small>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Fin highlights -->
+
+            <div class="row mb-3">
+              <!-- Tabla -->
+              <div class="col-xl-7 col-lg-12">
+                <div class="table-responsive">
+                  <table class="table table-bordered">
+                    <thead>
+                      <tr>
+                        <th scope="col"><small class="font-weight-bold">Departamento<small></th>
+                        <th scope="col"><small class="font-weight-bold">Infectados<small></th>
+                        <th scope="col"><small class="font-weight-bold">Recuperados<small></th>
+                        <th scope="col"><small class="font-weight-bold">Fallecidos<small></th>
+                        <th scope="col"><small class="font-weight-bold">Letalidad %<small></th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr class="shadow-sm">
+                        <td><span class="d-block">Lima</span></td>
+                        <td class="align-middle"><span class="badge badge-primary text-primary">14 000</span></td>
+                        <td class="align-middle"><span class="badge badge-secondary">6 000</span></td>
+                        <td class="align-middle"><span class="badge badge-primary text-primary">100</span></td>
+                        <td class="align-middle"><span class="badge badge-secondary">2</span></td>
+                      </tr>
+                      <tr class="shadow-sm">
+                        <td><span class="d-block">Callao</span></td>
+                        <td class="align-middle"><span class="badge badge-primary text-primary">14 000</span></td>
+                        <td class="align-middle"><span class="badge badge-secondary">6 000</span></td>
+                        <td class="align-middle"><span class="badge badge-primary text-primary">100</span></td>
+                        <td class="align-middle"><span class="badge badge-secondary">2</span></td>
+                      </tr>
+                      <tr class="shadow-sm">
+                        <td><span class="d-block">Ancash</span></td>
+                        <td class="align-middle"><span class="badge badge-primary text-primary">14 000</span></td>
+                        <td class="align-middle"><span class="badge badge-secondary">6 000</span></td>
+                        <td class="align-middle"><span class="badge badge-primary text-primary">100</span></td>
+                        <td class="align-middle"><span class="badge badge-secondary">2</span></td>
+                      </tr>
+                      <tr class="shadow-sm">
+                        <td><span class="d-block">Huancavelica</span></td>
+                        <td class="align-middle"><span class="badge badge-primary text-primary">14 000</span></td>
+                        <td class="align-middle"><span class="badge badge-secondary">6 000</span></td>
+                        <td class="align-middle"><span class="badge badge-primary text-primary">100</span></td>
+                        <td class="align-middle"><span class="badge badge-secondary">2</span></td>
+                      </tr>
+                      <tr class="shadow-sm">
+                        <td><span class="d-block">Loreto</span></td>
+                        <td class="align-middle"><span class="badge badge-primary text-primary">14 000</span></td>
+                        <td class="align-middle"><span class="badge badge-secondary">6 000</span></td>
+                        <td class="align-middle"><span class="badge badge-primary text-primary">100</span></td>
+                        <td class="align-middle"><span class="badge badge-secondary">2</span></td>
+                      </tr>
+                      <tr class="shadow-sm">
+                        <td><span class="d-block">Ica</span></td>
+                        <td class="align-middle"><span class="badge badge-primary text-primary">14 000</span></td>
+                        <td class="align-middle"><span class="badge badge-secondary">6 000</span></td>
+                        <td class="align-middle"><span class="badge badge-primary text-primary">100</span></td>
+                        <td class="align-middle"><span class="badge badge-secondary">2</span></td>
+                      </tr>
+                      <tr class="shadow-sm">
+                        <td><span class="d-block">Piura</span></td>
+                        <td class="align-middle"><span class="badge badge-primary text-primary">14 000</span></td>
+                        <td class="align-middle"><span class="badge badge-secondary">6 000</span></td>
+                        <td class="align-middle"><span class="badge badge-primary text-primary">100</span></td>
+                        <td class="align-middle"><span class="badge badge-secondary">2</span></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <!-- Fin tabla -->
+              <!-- Mensajes -->
+          <div class="col-xl-5 col-lg-12">
+            <div class="card mb-5 shadow-sm border-0 shadow-hover">
+              <div class="card-header bg-light border-0 pt-3 pb-0">
+                <h6 class="mb-0">Total de Casos por Departamento</h6>
+                <div class="mb-0">
+                    <h7>Categorias</h7>
+                    <i style="color:blue;" class="fas fa-circle"></i>
+                    <span>Confirmados</span>
+                    <i style="color:red;" class="fas fa-circle"></i>
+                    <span>Fallecidos</span>
+                </div>
+              </div>
+              <div class="card-body">
+                  <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d15613.950627881075!2d-77.04412159999998!3d-11.9407011867563!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses-419!2spe!4v1587866153435!5m2!1ses-419!2spe" width="350px"height="300px" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+              </div>
+            </div>
+          </div>
+          <!-- Fin mensajes -->
+            </div>
+          </section>
+        </div>
+      </div>
+      <!-- Fin Page Content -->
     </div>
-  </nav>
-</div>
-</div>
-<!-- Fin del SideBar -->
-
-
+<!-- Fin del Main -->
   <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
