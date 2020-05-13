@@ -1,1 +1,30 @@
-/* You can add global styles to this file, and also import other style files */
+#sidebar-container {
+  min-height: 100vh;
+  margin-left: -18rem;
+  transition: margin .25s ease-out;
+}
+#sidebar-container .logo{
+  padding: .875rem  1.25rem;
+  font-size: 1.2rem;
+}
+#sidebar-container .menu {
+  width: 18rem;
+}
+#content-wrapper.toggled #sidebar-container {
+  margin-left: 0;
+}
+
+/* Mostrar y Ocultar del Sidebar */
+@media (min-width: 768px) {
+  #sidebar-container {
+      margin-left: 0;
+  }
+  #content-wrapper.toggled #sidebar-container {
+      margin-left: -18rem;
+  }
+  #page-container{
+    min-width: 0;
+    width: 100%;
+  }
+
+}

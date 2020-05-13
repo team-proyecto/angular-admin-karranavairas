@@ -1,0 +1,66 @@
+    <app-formulario></app-formulario>
+<!-- Botones -->
+            <div class="row">
+              <div class="col-xl-12 col-lg-12">
+                <div class="form-group">
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal"><i class="fas fa-address-book"></i> Registrar</button>
+                        <button class="float-right btn btn-danger">PDF</button>
+                </div>
+              </div>
+            </div>
+            <!-- Fin Botones -->
+            <div class="row mb-3">
+              <!-- Tabla -->
+              <div class="col-xl-12 col-lg-12">
+                <div class="table-responsive">
+                  <table class="table table-bordered">
+                    <thead class="thead-dark">
+                      <tr>
+                        <th scope="col"><small class="font-weight-bold">#</small></th>
+                        <th scope="col"><small class="font-weight-bold">Nombre y Apellidos</small></th>
+                        <th scope="col"><small class="font-weight-bold">Tipo Documento</small></th>
+                        <th scope="col"><small class="font-weight-bold">Nro. Documento</small></th>
+                        <th scope="col"><small class="font-weight-bold">Fecha Registro</small></th>
+                        <th scope="col"><small class="font-weight-bold">Departamento</small></th>
+                        <th scope="col"><small class="font-weight-bold">Estado</small></th>
+                        <th colspan="2"></th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr *ngFor="let usuario of usuarioscasos">
+                        <td>{{ usuario.id }}</td>
+                        <!--  <td><img  src="https://www.neurologia.com/img/usuario.svg" class="img-thumbnail" style="width:64px;cursor:pointer;" /></td> -->
+                        <td class="align-middle"><span class="">{{ usuario.apellido }} {{ usuario.nombre }}</span></td>
+                        <td class="align-middle"><span class="">{{ usuario.tipoDocumento.nombreDocumento }}</span></td>
+                        <td class="align-middle"><span class="">{{ usuario.numeroDocumento }}</span></td>
+                        <td class="align-middle"><span class="">{{ usuario.fechaRegistro }}</span></td>
+                        <td class="align-middle"><span class="">{{ usuario.departamento.nombreDepartamento }}</span></td>
+                        <td class="align-middle"><span class="badge badge-success text-light">Recuperado</span></td>
+                        <td class="align-middle"><button class="btn btn-danger" data-toggle="modal" data-target="#exampleModal"><i class="fas fa-edit"></i> Editar</button></td>
+                        <td class="align-middle"><button class="btn btn-warning" name="eliminar" (click)="delete(usuario)"><i class="fas fa-trash-alt"></i> Eliminar</button></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <!-- Fin tabla -->
+                <!-- Paginator -->
+                <ul class="pagination text-primary">
+                    <li class="page-item" >
+                        <a class="page-link" >&laquo;</a>
+                    </li>
+                    <li >
+                        <a class="page-link" >Primera</a>
+                    </li>
+                   <li class="page-item">
+                        <span class="page-link">1</span>
+                        <!--<a class="page-link">1</a>-->
+                    </li>
+                    <li >
+                        <a class="page-link">Ultima</a>
+                    </li>
+                    <li class="page-item" >
+                        <a class="page-link">&raquo;</a>
+                    </li>
+                </ul>
+              </div>
+              <!-- Fin Paginator -->

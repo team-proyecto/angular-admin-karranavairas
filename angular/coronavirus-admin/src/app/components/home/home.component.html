@@ -1,0 +1,93 @@
+<div class="row">
+  <div class="col-xl-3 col-lg-6">
+    <div class="card mb-5 shadow-sm border-0 shadow-hover">
+      <div class="card-body d-flex">
+        <div>
+          <div class="circle rounded-circle align-self-center d-flex mr-3">
+            <i class="fab fa-wolf-pack-battalion" style="font-size:50px;"></i>
+          </div>
+        </div>
+        <div class="align-self-center">
+            <h5 class="mb-0">{{ casos.totalTests }}</h5>
+          <small class="text-muted">Total Tests Muestradas</small>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-xl-3 col-lg-6">
+    <div class="card mb-5 shadow-sm border-0 shadow-hover">
+      <div class="card-body d-flex">
+        <div>
+          <div class="circle rounded-circle align-self-center d-flex mr-3">
+            <i class="fab fa-wolf-pack-battalion" style="font-size:50px;"></i>
+          </div>
+        </div>
+        <div class="align-self-center">
+          <h5 class="mb-0">{{ casos.cases }}</h5>
+          <small class="text-muted">Casos Infectados</small>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-xl-3 col-lg-6">
+    <div class="card mb-5 shadow-sm border-0 shadow-hover">
+      <div class="card-body d-flex">
+        <div>
+          <div class="circle rounded-circle align-self-center d-flex mr-3">
+            <i class="fab fa-wolf-pack-battalion" style="font-size:50px;"></i>
+          </div>
+        </div>
+        <div class="align-self-center">
+          <h5 class="mb-0">{{ casos.recovered }}</h5>
+          <small class="text-muted">Recuperados</small>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-xl-3 col-lg-6">
+    <div class="card mb-5 shadow-sm border-0 shadow-hover">
+      <div class="card-body d-flex">
+        <div>
+          <div class="circle rounded-circle align-self-center d-flex mr-3">
+            <i class="fab fa-wolf-pack-battalion" style="font-size:50px;"></i>
+          </div>
+        </div>
+        <div class="align-self-center">
+          <h5 class="mb-0">{{ casos.deaths }}</h5>
+          <small class="text-muted">Fallecidos</small>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Fin highlights -->
+
+<div class="row mb-3">
+              <!-- Tabla -->
+              <div class="col-xl-7 col-lg-12">
+                <div class="table-responsive">
+                  <table class="table table-bordered">
+                    <thead>
+                      <tr>
+                        <th scope="col"><small class="font-weight-bold">ID</small></th>
+                        <th scope="col"><small class="font-weight-bold">Nombre y Apellidos</small></th>
+                        <th scope="col"><small class="font-weight-bold">Departamento</small></th>
+                        <th scope="col"><small class="font-weight-bold">Provincia</small></th>
+                        <th scope="col"><small class="font-weight-bold">Distrito</small></th>
+                        <th scope="col"><small class="font-weight-bold">Estado</small></th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr class="shadow-sm" *ngFor="let cliente of clientes; let i=index">
+                        <td><span class="d-block">{{ i + 1 }}</span></td>
+                        <td class="align-middle"><span class="">{{ cliente.nombresApellidos }}</span></td>
+                        <td class="align-middle"><span class="">{{ cliente.departamento }}</span></td>
+                        <td class="align-middle"><span class="">{{ cliente.provincia }}</span></td>
+                        <td class="align-middle"><span class="">{{ cliente.distrito }}</span></td>
+                        <td class="align-middle"><span class="badge badge-danger">{{ cliente.estado }}</span></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+</div>
