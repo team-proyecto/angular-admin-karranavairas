@@ -8,6 +8,7 @@ import { UsuariosCasos } from '../../entitys/usuarios-casos';
 import { Documento } from '../../entitys/documento';
 import { Departamento } from '../../entitys/departamento';
 import { Provincia } from '../../entitys/provincia';
+import { Distrito } from '../../entitys/distrito';
 import { Nacionalidad } from '../../entitys/nacionalidad';
 
 /*Component*/
@@ -26,14 +27,15 @@ export class FormularioComponent implements OnInit {
   usuarioscasos: UsuariosCasos[] = []
   documentos: Documento[];
   departamentos: Departamento[];
-  items : Departamento;
-  provincias : Provincia[];
+  items : Departamento= new Departamento();
+  array : Provincia= new Provincia();;
   nacionalidades: Nacionalidad[];
 
   constructor(
     private usuarioService: UsuarioService,
     private adicionalesService:AdicionalesService,
-    private usuariosCasosComponent: UsuariosCasosComponent) { }
+    private usuariosCasosComponent: UsuariosCasosComponent
+) { }
 
   ngOnInit() {
     this.adicionalesService.getDocumento().subscribe( documento =>  this.documentos = documento );
@@ -50,16 +52,10 @@ export class FormularioComponent implements OnInit {
         usuario => {
           this.usuariosCasosComponent.getUsuariosCasos();
           Swal.fire('Nuevo cliente', `El cliente ${usuario.nombre} ha sido creado con éxito`, 'success');
-        });
+        });    
   }
 
   compararDocumento(o1: Documento, o2: Documento): boolean {
-    if (o1 === undefined && o2 === undefined) {
-      return true;
-    }
-    return o1 === null || o2 === null || o1 === undefined || o2 === undefined ? false : o1.id === o2.id;
-  }
-  compararDepartamento(o1: Departamento, o2: Departamento): boolean {
     if (o1 === undefined && o2 === undefined) {
       return true;
     }
@@ -72,12 +68,28 @@ export class FormularioComponent implements OnInit {
     return o1 === null || o2 === null || o1 === undefined || o2 === undefined ? false : o1.id === o2.id;
   }
 
-  /*onSelect(id: number): void {
-    this.adicionalesService.getProvincia(id).subscribe(provincia =>{ this.provincias = provincia; console.log(this.provincias);
-    });
-    console.log('ID ->',id);
-    (change)="onSelect(usuario.departamento.id)"
-  }*/
+  compararDepartamento(o1: Departamento, o2: Departamento): boolean {
+    if (o1 === undefined && o2 === undefined) {
+      return true;
+    }
+    return o1 === null || o2 === null || o1 === undefined || o2 === undefined ? false : o1.id === o2.id;
+  }
+
+  onSelectDepartamento(id: any): void {
+    if (id === 0) {
+      this.items = null;
+    } else {
+      this.adicionalesService.getProvincia(id).subscribe(provincia => {this.items=provincia;console.log(this.items)});
+      console.log('ID Departamento ->',id);
+    }
+
+  }
+  onSelectProvincia(id:any): void {
+    this.adicionalesService.getDistrito(id).subscribe(distrito =>{this.array=distrito});
+    console.log('ID Provincia ->',id);
+  }
+
+
 
 
 }

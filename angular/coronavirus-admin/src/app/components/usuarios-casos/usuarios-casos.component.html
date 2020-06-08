@@ -3,7 +3,7 @@
             <div class="row">
               <div class="col-xl-12 col-lg-12">
                 <div class="form-group">
-                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal"><i class="fas fa-address-book"></i> Registrar</button>
+                        <button type="button" (click)="abrirModal()" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal"><i class="fas fa-address-book"></i> Registrar</button>
                         <button class="float-right btn btn-danger">PDF</button>
                 </div>
               </div>
@@ -21,7 +21,7 @@
                         <th scope="col"><small class="font-weight-bold">Tipo Documento</small></th>
                         <th scope="col"><small class="font-weight-bold">Nro. Documento</small></th>
                         <th scope="col"><small class="font-weight-bold">Fecha Registro</small></th>
-                        <th scope="col"><small class="font-weight-bold">Departamento</small></th>
+                        <th scope="col"><small class="font-weight-bold">Distrito</small></th>
                         <th scope="col"><small class="font-weight-bold">Estado</small></th>
                         <th colspan="2"></th>
                       </tr>
@@ -34,7 +34,7 @@
                         <td class="align-middle"><span class="">{{ usuario.tipoDocumento.nombreDocumento }}</span></td>
                         <td class="align-middle"><span class="">{{ usuario.numeroDocumento }}</span></td>
                         <td class="align-middle"><span class="">{{ usuario.fechaRegistro }}</span></td>
-                        <td class="align-middle"><span class="">{{ usuario.departamento.nombreDepartamento }}</span></td>
+                        <td class="align-middle"><span class="">{{ usuario.distrito.nombreDistrito }}</span></td>
                         <td class="align-middle"><span class="badge badge-success text-light">Recuperado</span></td>
                         <td class="align-middle"><button class="btn btn-danger" data-toggle="modal" data-target="#exampleModal"><i class="fas fa-edit"></i> Editar</button></td>
                         <td class="align-middle"><button class="btn btn-warning" name="eliminar" (click)="delete(usuario)"><i class="fas fa-trash-alt"></i> Eliminar</button></td>

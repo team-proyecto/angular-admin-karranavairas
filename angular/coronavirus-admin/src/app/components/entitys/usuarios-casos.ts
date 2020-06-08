@@ -1,4 +1,4 @@
-import { Departamento } from './departamento';
+import { Distrito } from './distrito';
 import { Documento } from './documento';
 import { Nacionalidad } from './nacionalidad';
 
@@ -13,7 +13,7 @@ export class UsuariosCasos {
 	codigoConfirmacion: number;
 	condicionUso: Boolean;
 	fechaRegistro: Date;
-	departamento: Departamento;
+	distrito: Distrito;
   tipoDocumento: Documento;
 	nacionalidad: Nacionalidad;
 	/*private Gps gps;

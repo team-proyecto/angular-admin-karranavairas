@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UsuarioService } from '../services/usuario.service';
 import { UsuariosCasos } from '../entitys/usuarios-casos';
-import { ModalService } from '../services/modal.service';
 import Swal from 'sweetalert2';
 
 
@@ -16,7 +15,7 @@ public usuario = new UsuariosCasos();
 
 usuarioscasos: UsuariosCasos[] = []
 
-  constructor(private usuarioService: UsuarioService,private modalService: ModalService) { }
+  constructor(private usuarioService: UsuarioService) { }
 
   ngOnInit() {
     this.getUsuariosCasos();
@@ -52,8 +51,6 @@ delete(usuario: UsuariosCasos):void {
     });
 }
 
-abrirModal(){
-    this.modalService.abrirModal();
-}
+
 
 }

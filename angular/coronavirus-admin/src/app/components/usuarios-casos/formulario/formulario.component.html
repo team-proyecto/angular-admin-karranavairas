@@ -1,5 +1,5 @@
 <!-- Modal de Registro y Editar-->
-<div class="modal fade " id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade"  id="exampleModal" tabindex="-1" role="dialog" >
   <div class="modal-dialog modal-xl" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -69,27 +69,27 @@
                 <div class="form-group row">
                   <label class="col-sm-4 col-form-label" for="">Departamento</label>
                   <div class="col-sm-8">
-                    <select [compareWith]="compararDepartamento" name="departamento" [(ngModel)]="usuario.departamento" id="" class="form-control" >
+                    <select [compareWith]="compararDepartamento" name="departamento" [(ngModel)]="departamento" id="" class="form-control" (change)="onSelectDepartamento(departamento.id)">
                         <option [ngValue]="undefined">--Seleccionar--</option>
-                        <option *ngFor="let departamento of departamentos" [ngValue]="departamento">{{ departamento.nombreDepartamento }}</option>
+                        <option  *ngFor="let departamento of departamentos" [ngValue]="departamento" >{{ departamento.nombreDepartamento }}</option>
                     </select>
                   </div>
                 </div>
                 <div class="form-group row">
                   <label class="col-sm-4 col-form-label" for="">Provincia</label>
                   <div class="col-sm-8">
-                    <select name="provincia" name="" id="" class="form-control">
-                      <option [ngValue]="undefined">--Seleccionar--</option>
-                        <!--<option *ngFor="let provincia of provincias">{{ provincia.nombreProvincia }}</option>-->
+                    <select name="provincia" id="" class="form-control" [(ngModel)]="provincia" (change)="onSelectProvincia(provincia.id)">
+                        <option [ngValue]="undefined">--Seleccionar--</option>
+                        <option  *ngFor="let provincia of items.provincia" [ngValue]="provincia">{{ provincia.nombreProvincia }}</option>
                     </select>
                   </div>
                 </div>
                 <div class="form-group row">
                   <label class="col-sm-4 col-form-label" for="">Distrito</label>
                   <div class="col-sm-8">
-                    <select name="" id="" class="form-control">
-                        <option value="">--Seleccionar--</option>
-                        <option value="">DNI</option>
+                    <select  name="distrito" id="" class="form-control" [(ngModel)]="usuario.distrito">
+                        <option [ngValue]="undefined">--Seleccionar--</option>
+                        <option *ngFor="let distrito of array.distrito" [ngValue]="distrito">{{ distrito.nombreDistrito }}</option>
                     </select>
                   </div>
                 </div>

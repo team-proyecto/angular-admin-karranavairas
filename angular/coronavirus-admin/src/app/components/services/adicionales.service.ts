@@ -19,10 +19,14 @@ export class AdicionalesService {
     return this.http.get<Departamento[]>(`${this.urlEndPoint}/departamentos`);
   }
 
-  getProvincia(id:number): Observable<Provincia[]> {
-    return this.http.get<Provincia[]>(`${this.urlEndPoint}/departamentos/${id}`);
+  getProvincia(id:number): Observable<Departamento> {
+    return this.http.get<Departamento>(`${this.urlEndPoint}/departamentos/${id}`);
   }
 
+  getDistrito(id:number): Observable<Provincia> {
+    return this.http.get<Provincia>(`${this.urlEndPoint}/provincias/${id}`);
+  }
+  
   getDocumento(): Observable<Documento[]> {
     return this.http.get<Documento[]>(`${this.urlEndPoint}/documentos`);
   }
