@@ -1,6 +1,6 @@
 export class Documento {
 
-id:number;
+id: number;
 nombreDocumento: string;
 estado: true;
 

@@ -10,7 +10,7 @@ import { APP_ROUTING } from './app.routes';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
 import { UsuariosCasosComponent } from './components/usuarios-casos/usuarios-casos.component';
-import { FormularioComponent } from './components/usuarios-casos/formulario/formulario.component';
+import { FormComponent } from './components/usuarios-casos/form/form.component';
 
 
 @NgModule({
@@ -18,7 +18,7 @@ import { FormularioComponent } from './components/usuarios-casos/formulario/form
     AppComponent,
     HomeComponent,
     UsuariosCasosComponent,
-    FormularioComponent
+    FormComponent
   ],
   imports: [
     BrowserModule,

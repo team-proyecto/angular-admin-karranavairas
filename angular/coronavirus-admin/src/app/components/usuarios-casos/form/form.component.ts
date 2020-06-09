@@ -1,40 +1,35 @@
 import { Component, OnInit } from '@angular/core';
-/*Service*/
 import { UsuarioService } from '../../services/usuario.service';
 import { AdicionalesService } from '../../services/adicionales.service';
-
+import { Router, ActivatedRoute } from '@angular/router';
 /*Entitys*/
 import { UsuariosCasos } from '../../entitys/usuarios-casos';
 import { Documento } from '../../entitys/documento';
 import { Departamento } from '../../entitys/departamento';
 import { Provincia } from '../../entitys/provincia';
-import { Distrito } from '../../entitys/distrito';
 import { Nacionalidad } from '../../entitys/nacionalidad';
-
-/*Component*/
-import { UsuariosCasosComponent } from '../usuarios-casos.component';
 
 import Swal from 'sweetalert2';
 
-
 @Component({
-  selector: 'app-formulario',
-  templateUrl: './formulario.component.html'
+  selector: 'app-form',
+  templateUrl: './form.component.html'
 })
-export class FormularioComponent implements OnInit {
+export class FormComponent implements OnInit {
 
-  public usuario : UsuariosCasos = new UsuariosCasos();
-  usuarioscasos: UsuariosCasos[] = []
+  public usuario: UsuariosCasos = new UsuariosCasos();
+  usuarioscasos: UsuariosCasos[] = [];
   documentos: Documento[];
   departamentos: Departamento[];
-  items : Departamento= new Departamento();
-  array : Provincia= new Provincia();;
+  items: Departamento = new Departamento();
+  array: Provincia = new Provincia();
   nacionalidades: Nacionalidad[];
+
 
   constructor(
     private usuarioService: UsuarioService,
-    private adicionalesService:AdicionalesService,
-    private usuariosCasosComponent: UsuariosCasosComponent
+    private adicionalesService: AdicionalesService,
+    private router: Router,
 ) { }
 
   ngOnInit() {
@@ -44,17 +39,17 @@ export class FormularioComponent implements OnInit {
   }
 
   create(): void {
+    // tslint:disable-next-line: comment-format
     //console.log(this.usuarioscasos);
-    this.usuario.codigoConfirmacion = null
-    this.usuario.condicionUso = true
+    this.usuario.codigoConfirmacion = null;
+    this.usuario.condicionUso = true;
     this.usuarioService.create(this.usuario)
       .subscribe(
         usuario => {
-          this.usuariosCasosComponent.getUsuariosCasos();
+          this.router.navigate(['/usuarios']);
           Swal.fire('Nuevo cliente', `El cliente ${usuario.nombre} ha sido creado con éxito`, 'success');
-        });    
+        });
   }
-
   compararDocumento(o1: Documento, o2: Documento): boolean {
     if (o1 === undefined && o2 === undefined) {
       return true;
@@ -79,17 +74,15 @@ export class FormularioComponent implements OnInit {
     if (id === 0) {
       this.items = null;
     } else {
-      this.adicionalesService.getProvincia(id).subscribe(provincia => {this.items=provincia;console.log(this.items)});
-      console.log('ID Departamento ->',id);
+      this.adicionalesService.getProvincia(id).subscribe(provincia => this.items = provincia);
+      console.log('ID Departamento ->', id);
     }
 
   }
-  onSelectProvincia(id:any): void {
-    this.adicionalesService.getDistrito(id).subscribe(distrito =>{this.array=distrito});
-    console.log('ID Provincia ->',id);
+  onSelectProvincia(id: any): void {
+    this.adicionalesService.getDistrito(id).subscribe(distrito => this.array = distrito);
+    console.log('ID Provincia ->', id);
   }
-
-
 
 
 }

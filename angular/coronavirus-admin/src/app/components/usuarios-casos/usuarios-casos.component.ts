@@ -6,14 +6,13 @@ import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-usuarios-casos',
-  templateUrl: './usuarios-casos.component.html',
-  styleUrls: ['./usuarios-casos.component.css']
+  templateUrl: './usuarios-casos.component.html'
 })
 export class UsuariosCasosComponent implements OnInit {
 
 public usuario = new UsuariosCasos();
 
-usuarioscasos: UsuariosCasos[] = []
+usuarioscasos: UsuariosCasos[] = [];
 
   constructor(private usuarioService: UsuarioService) { }
 
@@ -28,7 +27,7 @@ getUsuariosCasos(): void {
   });
 }
 
-delete(usuario: UsuariosCasos):void {
+delete(usuario: UsuariosCasos): void {
   Swal.fire({
       title: 'Está Seguro?',
       text: `¿Seguro que desea eliminar al cliente ${usuario.nombre} ${usuario.apellido}?`,
