@@ -11,6 +11,8 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
 import { UsuariosCasosComponent } from './components/usuarios-casos/usuarios-casos.component';
 import { FormComponent } from './components/usuarios-casos/form/form.component';
+import { ReporteEconomicoComponent } from './components/reporte-economico/reporte-economico.component';
+import { FormReporteComponent } from './components/reporte-economico/form-reporte/form-reporte.component';
 
 
 @NgModule({
@@ -18,7 +20,9 @@ import { FormComponent } from './components/usuarios-casos/form/form.component';
     AppComponent,
     HomeComponent,
     UsuariosCasosComponent,
-    FormComponent
+    FormComponent,
+    ReporteEconomicoComponent,
+    FormReporteComponent
   ],
   imports: [
     BrowserModule,

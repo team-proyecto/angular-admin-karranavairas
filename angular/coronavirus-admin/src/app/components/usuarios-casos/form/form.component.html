@@ -57,7 +57,7 @@
         <div class="form-group row">
           <label class="col-sm-4 col-form-label" for="">Departamento</label>
           <div class="col-sm-8">
-            <select [compareWith]="compararDepartamento" name="departamento" [(ngModel)]="departamento" id="" class="form-control" (change)="onSelectDepartamento(departamento.id)">
+            <select [compareWith]="compararDepartamento" name="departamento" [(ngModel)]="provincia.departamento" id="" class="form-control" (change)="onSelectDepartamento(provincia.departamento.id)">
                 <option [ngValue]="undefined">--Seleccionar--</option>
                 <option  *ngFor="let departamento of departamentos" [ngValue]="departamento" >{{ departamento.nombreDepartamento }}</option>
             </select>

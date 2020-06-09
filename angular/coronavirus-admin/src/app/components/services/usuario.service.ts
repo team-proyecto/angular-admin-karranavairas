@@ -8,12 +8,16 @@ import { Observable } from 'rxjs';
 })
 export class UsuarioService {
 
-private urlEndPoint = 'http://localhost:8080/api/usuarioscasos'
+private urlEndPoint = 'http://localhost:8080/api/usuarioscasos';
 
   constructor(private http: HttpClient) { }
 
 getUsuariosCasos(): Observable<UsuariosCasos[]> {
   return this.http.get<UsuariosCasos[]>(this.urlEndPoint);
+}
+
+getUsuario(id): Observable<UsuariosCasos> {
+  return this.http.get<UsuariosCasos>(`${this.urlEndPoint}/${id}`);
 }
 
 delete(id: number): Observable<UsuariosCasos> {

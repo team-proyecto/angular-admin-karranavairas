@@ -10,6 +10,7 @@ import { Provincia } from '../../entitys/provincia';
 import { Nacionalidad } from '../../entitys/nacionalidad';
 
 import Swal from 'sweetalert2';
+import { Distrito } from '../../entitys/distrito';
 
 @Component({
   selector: 'app-form',
@@ -17,6 +18,9 @@ import Swal from 'sweetalert2';
 })
 export class FormComponent implements OnInit {
 
+  public departamento: Departamento = new Departamento();
+  public provincia: Provincia = new Provincia();
+  public distrito: Distrito = new Distrito();
   public usuario: UsuariosCasos = new UsuariosCasos();
   usuarioscasos: UsuariosCasos[] = [];
   documentos: Documento[];
@@ -30,12 +34,24 @@ export class FormComponent implements OnInit {
     private usuarioService: UsuarioService,
     private adicionalesService: AdicionalesService,
     private router: Router,
+    private activatedRoute: ActivatedRoute
 ) { }
 
   ngOnInit() {
     this.adicionalesService.getDocumento().subscribe( documento =>  this.documentos = documento );
     this.adicionalesService.getDepartamento().subscribe(departamento => this.departamentos = departamento);
     this.adicionalesService.getNacionalidad().subscribe( nacionalidad => this.nacionalidades = nacionalidad);
+    this.cargarUsuario();
+  }
+
+  cargarUsuario(): void {
+    this.activatedRoute.params.subscribe(params => {
+      // tslint:disable-next-line: no-string-literal
+      const id = params['id'];
+      if (id) {
+        this.usuarioService.getUsuario(id).subscribe( (usuario) => this.usuario = usuario);
+      }
+    });
   }
 
   create(): void {
@@ -47,7 +63,7 @@ export class FormComponent implements OnInit {
       .subscribe(
         usuario => {
           this.router.navigate(['/usuarios']);
-          Swal.fire('Nuevo cliente', `El cliente ${usuario.nombre} ha sido creado con éxito`, 'success');
+          Swal.fire('Nuevo cliente', `El cliente ${this.usuario.nombre} ${this.usuario.apellido} ha sido creado con éxito`, 'success');
         });
   }
   compararDocumento(o1: Documento, o2: Documento): boolean {

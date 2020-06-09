@@ -1,0 +1,61 @@
+<div class="row">
+    <div class="col-xl-12 col-lg-12">
+      <div class="form-group">
+              <a type="button" [routerLink]="['/reporte/form']" class="btn btn-primary" ><i class="fas fa-address-book"></i> Registrar</a>
+              <button class="float-right btn btn-danger">PDF</button>
+      </div>
+    </div>
+  </div>
+  <!-- Fin Botones -->
+  <div class="row mb-3">
+    <!-- Tabla -->
+    <div class="col-xl-12 col-lg-12">
+      <div class="table-responsive">
+        <table class="table table-bordered text-center">
+          <thead class="thead-dark">
+            <tr>
+              <th scope="col"><small class="font-weight-bold">#</small></th>
+              <th scope="col"><small class="font-weight-bold">Bono Asignado</small></th>
+              <th scope="col"><small class="font-weight-bold">Monto</small></th>
+              <th scope="col"><small class="font-weight-bold">Estado Economico</small></th>
+              <th scope="col"><small class="font-weight-bold">Fecha Registro</small></th>              
+              <th colspan="2"></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let reporte of reportes">
+              <td>{{ reporte.id }}</td>
+              <!--  <td><img  src="https://www.neurologia.com/img/usuario.svg" class="img-thumbnail" style="width:64px;cursor:pointer;" /></td> -->
+              <td class="align-middle"><span class="">{{ (reporte.bonoAsignado == true)? 'Asignado': 'No fue Asignado' }}</span></td>
+              <td class="align-middle"><span class="">{{ reporte.montoServicio }}</span></td>
+              <td class="align-middle"><span class="">{{ reporte.estadoEconomico.nombreEconomico }}</span></td>
+              <td class="align-middle"><span class="">{{ reporte.fechaRegistro }}</span></td>             
+              <td class="align-middle"><button [routerLink]="['/reporte/form',reporte.id]" class="btn btn-danger"><i class="fas fa-edit"></i> Editar</button></td>
+              <td class="align-middle"><button class="btn btn-warning" name="eliminar" ><i class="fas fa-trash-alt"></i> Eliminar</button></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <!-- Fin tabla -->
+      <!-- Paginator -->
+      <ul class="pagination text-primary">
+          <li class="page-item" >
+              <a class="page-link" >&laquo;</a>
+          </li>
+          <li >
+              <a class="page-link" >Primera</a>
+          </li>
+         <li class="page-item">
+              <span class="page-link">1</span>
+              <!--<a class="page-link">1</a>-->
+          </li>
+          <li >
+              <a class="page-link">Ultima</a>
+          </li>
+          <li class="page-item" >
+              <a class="page-link">&raquo;</a>
+          </li>
+      </ul>
+    </div>
+    <!-- Fin Paginator -->
+

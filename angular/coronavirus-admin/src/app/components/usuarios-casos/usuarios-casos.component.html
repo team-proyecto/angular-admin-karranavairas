@@ -35,7 +35,7 @@
                         <td class="align-middle"><span class="">{{ usuario.fechaRegistro }}</span></td>
                         <td class="align-middle"><span class="">{{ usuario.distrito.nombreDistrito }}</span></td>
                         <td class="align-middle"><span class="badge badge-success text-light">Recuperado</span></td>
-                        <td class="align-middle"><button class="btn btn-danger"><i class="fas fa-edit"></i> Editar</button></td>
+                        <td class="align-middle"><button [routerLink]="['/form',usuario.id]" class="btn btn-danger"><i class="fas fa-edit"></i> Editar</button></td>
                         <td class="align-middle"><button class="btn btn-warning" name="eliminar" (click)="delete(usuario)"><i class="fas fa-trash-alt"></i> Eliminar</button></td>
                       </tr>
                     </tbody>
