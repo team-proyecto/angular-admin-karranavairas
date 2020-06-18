@@ -8,7 +8,9 @@ import { Observable } from 'rxjs';
 })
 export class DepartamentoService {
 
-  private urlEndPoint = 'https://localhost:8080/api/';
+
+  // private urlEndPoint = 'http://localhost:8080/api/';*/
+  private urlEndPoint = 'https://corona-spring.herokuapp.com/api/';
 
   constructor(private http:HttpClient) { }
 

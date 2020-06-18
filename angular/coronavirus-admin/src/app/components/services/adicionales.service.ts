@@ -12,7 +12,8 @@ import { Nacionalidad } from '../entitys/nacionalidad';
 })
 export class AdicionalesService {
 
-  private urlEndPoint = 'http://localhost:8080/api/usuarioscasos';
+   /* private urlEndPoint = 'http://localhost:8080/api/usuarioscasos';*/
+  private urlEndPoint = 'https://corona-spring.herokuapp.com/api/usuarioscasos';
   constructor(private http:HttpClient) { }
 
   getDepartamento(): Observable<Departamento[]> {

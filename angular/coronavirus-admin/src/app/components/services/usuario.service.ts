@@ -8,7 +8,8 @@ import { Observable } from 'rxjs';
 })
 export class UsuarioService {
 
-private urlEndPoint = 'http://localhost:8080/api/usuarioscasos';
+  private urlEndPoint = 'https://corona-spring.herokuapp.com/api/usuarioscasos';
+// private urlEndPoint = 'http://localhost:8080/api/usuarioscasos';
 
   constructor(private http: HttpClient) { }
 

@@ -1,1 +1,29 @@
-<p>form-reporte works!</p>
+<div class="card">
+    <div class="card-body">
+      <h5 class="card-title">Reporte Economicos</h5>      
+      <div class="form-group row">
+        <label class="col-sm-3 col-form-label" for="">Estado Economico</label>
+        <div class="col-sm-9">
+          <select [compareWith]="compararDocumento" name="tipoDocumento" [(ngModel)]="reporte.estadoEconomico" id="" class="form-control" >
+              <option [ngValue]="undefined">--Seleccionar--</option>
+              <option *ngFor="let documento of documentos" [ngValue]="documento">{{ documento.nombreDocumento }}</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-group row">
+        <label class="col-sm-3 col-form-label" for="">Monto</label>
+        <div class="col-sm-9">
+          <input type="text" [(ngModel)]="reporte.montoServicio" class="form-control" placeholder="Ingrese el Monto" />
+        </div>
+      </div>      
+      <div class="form-group row">
+        <label class="col-sm-3 col-form-label" for="">Usuario</label>
+        <div class="col-sm-9">
+          <select [compareWith]="compararDocumento" name="tipoDocumento" [(ngModel)]="reporte.usuarioCaso" id="" class="form-control" >
+              <option [ngValue]="undefined">--Seleccionar--</option>
+              <option *ngFor="let documento of documentos" [ngValue]="documento">{{ documento.nombreDocumento }}</option>
+          </select>
+        </div>
+      </div>
+    </div>
+  </div>

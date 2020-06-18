@@ -8,7 +8,8 @@ import { Observable } from 'rxjs';
 })
 export class ReporteEconomicoService {
 
-  private urlEndPoint = 'http://localhost:8080/api/reconomicos';
+   private urlEndPoint = 'https://corona-spring.herokuapp.com/api/reconomicos';
+  // private urlEndPoint = 'http://localhost:8080/api/reconomicos';
 
   constructor(private http: HttpClient) { }
 
