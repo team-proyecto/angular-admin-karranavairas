@@ -4,7 +4,7 @@
       <div class="card-body d-flex">
         <div>
           <div class="circle rounded-circle align-self-center d-flex mr-3">
-            <i class="fab fa-wolf-pack-battalion" style="font-size:50px;"></i>
+            <i class="fas fa-vials" style="font-size:50px;"></i>
           </div>
         </div>
         <div class="align-self-center">
@@ -19,7 +19,7 @@
       <div class="card-body d-flex">
         <div>
           <div class="circle rounded-circle align-self-center d-flex mr-3">
-            <i class="fab fa-wolf-pack-battalion" style="font-size:50px;"></i>
+            <i class="fas fa-syringe" style="font-size:50px;"></i>
           </div>
         </div>
         <div class="align-self-center">
@@ -34,7 +34,7 @@
       <div class="card-body d-flex">
         <div>
           <div class="circle rounded-circle align-self-center d-flex mr-3">
-            <i class="fab fa-wolf-pack-battalion" style="font-size:50px;"></i>
+            <i class="fas fa-notes-medical" style="font-size:50px;"></i>
           </div>
         </div>
         <div class="align-self-center">
@@ -49,7 +49,7 @@
       <div class="card-body d-flex">
         <div>
           <div class="circle rounded-circle align-self-center d-flex mr-3">
-            <i class="fab fa-wolf-pack-battalion" style="font-size:50px;"></i>
+            <i class="fas fa-skull-crossbones" style="font-size:50px;"></i>
           </div>
         </div>
         <div class="align-self-center">
@@ -64,13 +64,12 @@
 
 <div class="row mb-3">
               <!-- Tabla -->
-              <div class="col-xl-7 col-lg-12">
+              <div class="col-xl-7 col-lg-5">
                 <div class="table-responsive">
                   <table class="table table-bordered">
                     <thead>
                       <tr>
                         <th scope="col"><small class="font-weight-bold">ID</small></th>
-                        <th scope="col"><small class="font-weight-bold">Nombre y Apellidos</small></th>
                         <th scope="col"><small class="font-weight-bold">Departamento</small></th>
                         <th scope="col"><small class="font-weight-bold">Provincia</small></th>
                         <th scope="col"><small class="font-weight-bold">Distrito</small></th>
@@ -78,16 +77,21 @@
                       </tr>
                     </thead>
                     <tbody>
-                      <tr class="shadow-sm" *ngFor="let cliente of clientes; let i=index">
+                      <tr class="shadow-sm" *ngFor="let usuario of usuarios; let i=index">
                         <td><span class="d-block">{{ i + 1 }}</span></td>
-                        <td class="align-middle"><span class="">{{ cliente.nombresApellidos }}</span></td>
-                        <td class="align-middle"><span class="">{{ cliente.departamento }}</span></td>
-                        <td class="align-middle"><span class="">{{ cliente.provincia }}</span></td>
-                        <td class="align-middle"><span class="">{{ cliente.distrito }}</span></td>
-                        <td class="align-middle"><span class="badge badge-danger">{{ cliente.estado }}</span></td>
+                        <td class="align-middle"><span class="">{{ usuario.distrito.provincia.departamento.nombreDepartamento }}</span></td>
+                        <td class="align-middle"><span class="">{{ usuario.distrito.provincia.nombreProvincia }}</span></td>
+                        <td class="align-middle"><span class="">{{ usuario.distrito.nombreDistrito }}</span></td>
+                        <td class="align-middle"><span class="badge badge-danger">{{ usuario.estado == true? 'Critico' : 'Moderado'  }}</span></td>
                       </tr>
                     </tbody>
                   </table>
                 </div>
               </div>
+              <div class="col-xl-5 col-lg-5">
+                <agm-map [latitude]="-11.9902626" [longitude]="-77.0615921" [zoom]="zoom" (centerChange)="centerChange($event)">
+                   <agm-circle  *ngFor="let item of markers" [fillColor]="'red'" [radius]="radius"  [latitude]="item.lat" [longitude]="item.lng"></agm-circle>                   
+                </agm-map>
+              </div>
 </div>
+

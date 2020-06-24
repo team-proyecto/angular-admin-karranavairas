@@ -14,6 +14,7 @@ import { FormComponent } from './components/usuarios-casos/form/form.component';
 import { ReporteEconomicoComponent } from './components/reporte-economico/reporte-economico.component';
 import { FormReporteComponent } from './components/reporte-economico/form-reporte/form-reporte.component';
 
+import { AgmCoreModule } from '@agm/core';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,10 @@ import { FormReporteComponent } from './components/reporte-economico/form-report
     BrowserModule,
     HttpClientModule,
     APP_ROUTING,
-    FormsModule
+    FormsModule,
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyDNOu2JQ001PxZY-GVwFvVou0_6h_Sj-14'
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]

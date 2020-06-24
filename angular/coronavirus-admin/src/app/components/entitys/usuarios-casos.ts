@@ -14,7 +14,7 @@ codigoConfirmacion: number;
 condicionUso: boolean;
 fechaRegistro: Date;
 distrito: Distrito;
- tipoDocumento: Documento;
+tipoDocumento: Documento;
 nacionalidad: Nacionalidad;
 /*private Gps gps;
 private TipoUsuario tipoUsuario;

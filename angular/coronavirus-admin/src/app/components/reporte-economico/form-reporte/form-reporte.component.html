@@ -4,9 +4,9 @@
       <div class="form-group row">
         <label class="col-sm-3 col-form-label" for="">Estado Economico</label>
         <div class="col-sm-9">
-          <select [compareWith]="compararDocumento" name="tipoDocumento" [(ngModel)]="reporte.estadoEconomico" id="" class="form-control" >
+          <select [compareWith]="compararEstado" name="estadoeconomico" [(ngModel)]="reporte.estadoEconomico" id="" class="form-control" >
               <option [ngValue]="undefined">--Seleccionar--</option>
-              <option *ngFor="let documento of documentos" [ngValue]="documento">{{ documento.nombreDocumento }}</option>
+              <option *ngFor="let estado of estados" [ngValue]="estado">{{ estado.nombreEconomico }}</option>
           </select>
         </div>
       </div>
@@ -19,11 +19,15 @@
       <div class="form-group row">
         <label class="col-sm-3 col-form-label" for="">Usuario</label>
         <div class="col-sm-9">
-          <select [compareWith]="compararDocumento" name="tipoDocumento" [(ngModel)]="reporte.usuarioCaso" id="" class="form-control" >
+          <select [compareWith]="compararUsuario" name="usuariocasos" [(ngModel)]="reporte.usuarioCaso" id="" class="form-control" >
               <option [ngValue]="undefined">--Seleccionar--</option>
-              <option *ngFor="let documento of documentos" [ngValue]="documento">{{ documento.nombreDocumento }}</option>
+              <option *ngFor="let usuario of usuarios" [ngValue]="usuario">{{ usuario.nombre }} {{ usuario.apellido }}</option>
           </select>
         </div>
       </div>
     </div>
+  </div>
+  <div class="mt-4">
+    <button type="button" [routerLink]="['/reporte']" class="float-left btn btn-danger">Regresar</button>
+    <button type="button" (click)="create()" class="float-right btn btn-primary">Guardar</button>
   </div>

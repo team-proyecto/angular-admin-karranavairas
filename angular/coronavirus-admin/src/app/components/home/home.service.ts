@@ -15,8 +15,8 @@ private urlEndPointLocal = 'http://localhost:8080/api/clientes';
   constructor(private http: HttpClient) {  }
 
 
-getCasos(): Observable<Home[]> {
-  return this.http.get<Home[]>(this.urlEndPoint);
+getCasos(): Observable<Home> {
+  return this.http.get<Home>(this.urlEndPoint);
 }
 
 getCliente(): Observable<Cliente[]> {
